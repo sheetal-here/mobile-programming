@@ -1,0 +1,61 @@
+Check Branches
+git branch
+
+Shows local branches
+git branch -a
+
+Shows local + remote branches
+
+
+Create a Branch
+git branch feature-branch
+
+Creates a new branch without switching to it
+
+Create & Switch to a Branch (Most Common)
+git checkout -b feature-branch
+
+OR (modern syntax, recommended):
+git switch -c feature-branch
+
+
+Switch Between Branches
+git checkout main
+
+OR:
+git switch main
+
+
+Check Current Branch
+git status
+
+OR:
+git branch --show-current
+
+
+Stage Changes
+git add .
+
+Stage all changes
+git add file.js
+
+Stage a specific file
+
+Commit Changes
+git commit -m "Add login form"
+
+
+Push a Branch to Remote (First Time)
+git push -u origin feature-branch
+
+-u sets upstream so future pushes are simpler
+After that, you can just run:
+git push
+
+
+Pull Latest Changes
+Pull current branch:
+git pull
+
+Pull a specific branch:
+git pull origin main
