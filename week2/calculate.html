@@ -3,39 +3,41 @@
 
 <head>
     <title>Simple Calculator</title>
-
-    <script src="calculate.js"></script>
 </head>
 
 <body>
 
-    <h2>Simple Calculator</h2>
+    <h1>Simple Calculator</h1>
 
     Number 1:
     <input type="number" id="n1">
+
     <br><br>
 
     Number 2:
     <input type="number" id="n2">
+
     <br><br>
 
-    <button onclick="add()">
-        Add +
+    <button onclick="calculate('+')">
+        ADD (+)
     </button>
 
-    <button onclick="subtract()">
-        Subtract -
+    <button onclick="calculate('-')">
+        SUBTRACT (-)
     </button>
 
-    <button onclick="multiply()">
-        Multiply *
+    <button onclick="calculate('*')">
+        MULTIPLY (*)
     </button>
 
-    <button onclick="divide()">
-        Divide /
+    <button onclick="calculate('/')">
+        DIVIDE (/)
     </button>
 
-    <h3 id="result"></h3>
+    <h2 id="result"></h2>
+
+    <script src="calculate.js"></script>
 
 </body>
 
