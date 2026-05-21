@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Corner Revolving Box</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body{
+            margin: 20px;
+            position: relative;
+            height: 100vh;
+        }
+
+        #startBtn{
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        #box{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+
+            position: absolute;
+
+            top: 100px;
+            left: 0px;
+
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <button id="startBtn">Start Animation</button>
+
+    <div id="box"></div>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#startBtn").click(function(){
+
+                // TOP LEFT → TOP RIGHT
+                $("#box").animate(
+                    {
+                        left: "500px",
+                        opacity: 0.8
+                    },
+                    2500,
+
+                    function(){
+
+                        // Change color AFTER reaching corner
+                        $("#box").css("background-color", "blue");
+
+                        // TOP RIGHT → BOTTOM RIGHT
+                        $("#box").animate(
+                            {
+                                top: "400px",
+                                opacity: 0.6
+                            },
+                            2500,
+
+                            function(){
+
+                                $("#box").css("background-color", "green");
+
+                                // BOTTOM RIGHT → BOTTOM LEFT
+                                $("#box").animate(
+                                    {
+                                        left: "0px",
+                                        opacity: 0.4
+                                    },
+                                    2500,
+
+                                    function(){
+
+                                        $("#box").css("background-color", "purple");
+
+                                        // BOTTOM LEFT → TOP LEFT
+                                        $("#box").animate(
+                                            {
+                                                top: "100px",
+                                                opacity: 0.2
+                                            },
+                                            2500,
+
+                                            function(){
+
+                                                $("#box").css("background-color", "orange");
+
+                                            }
+                                        );
+
+                                    }
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
